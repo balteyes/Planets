@@ -5,4 +5,6 @@ public class Astronom implements Comparator<Planet> {
     public int compare(Planet p1, Planet p2) {
         return Double.compare(p1.getWeight(), p2.getWeight());
     }
+
+
 }
