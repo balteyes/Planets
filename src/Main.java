@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static List<Planet> main(String[] args) {
 
         List<Planet> planetList = new ArrayList<>(8);
         planetList.add(new Planet("Jupiter", 18.90));
@@ -18,8 +18,18 @@ public class Main {
         planetList.sort(new Astronom());
         System.out.println(planetList);
 
+        Planet earth = planetList.get(1);
+        System.out.println(earth.getMoons());
+        earth.addMoon(new Moon("Луна", 7.35e22, "серый"));
+        System.out.println(earth.getMoons());
+
+        Planet mars = planetList.get(2);
+        mars.addMoon(new Moon("Фобос", 123, "white"));
+        mars.getMoons().add(new Moon("Деймос", 222, ""));
 
 
+        return planetList;
     }
 
 }
+
